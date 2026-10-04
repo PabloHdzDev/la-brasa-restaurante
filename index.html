@@ -7,6 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome: solo núcleo + marcas (redes sociales) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -141,7 +144,8 @@
       justify-content: center;
       gap: 1rem;
     }
-    .hero-placeholder .icon { font-size: 7rem; opacity: 0.85; }
+    .hero-placeholder .icon { font-size: 7rem; opacity: 0.85; display: flex; color: var(--accent-light); }
+    .hero-placeholder .icon svg { width: 96px; height: 96px; }
     .hero-placeholder .caption {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -263,7 +267,9 @@
       align-items: center;
       justify-content: center;
       font-size: 4rem;
+      color: var(--accent);
     }
+    .plato-thumb svg { width: 40px; height: 40px; }
     .bg-a { background: #F5E8D0; }
     .bg-b { background: #EAD5B5; }
     .bg-c { background: #F0DDC0; }
@@ -318,6 +324,8 @@
       position: relative;
     }
 
+    .nosotros-visual svg { width: 96px; height: 96px; color: var(--accent-light); opacity: 0.85; }
+
     .nosotros-visual .overlay-text {
       position: absolute;
       bottom: 1.5rem;
@@ -371,7 +379,8 @@
       padding: 1.5rem 1.4rem;
     }
 
-    .resena-estrellas { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+    .resena-estrellas { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; margin-bottom: 1rem; display: flex; gap: 2px; }
+    .resena-estrellas svg { width: 14px; height: 14px; fill: currentColor; }
 
     .resena-texto {
       font-size: 0.9rem;
@@ -470,7 +479,11 @@
       margin-bottom: 1rem;
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--border-warm);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    .contacto-bloque h3 svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
 
     .contacto-bloque p,
     .contacto-bloque address {
@@ -522,6 +535,7 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .social-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .social-btn .fa-brands { font-size: 0.95rem; }
 
     /* ───── RESPONSIVE ───── */
     @media (max-width: 900px) {
@@ -585,7 +599,7 @@
         por: <img src="foto-restaurante.jpg" alt="Interior del restaurante" />
       -->
       <div class="hero-placeholder">
-        <span class="icon">🍽️</span>
+        <span class="icon"><i data-lucide="utensils"></i></span>
         <span class="caption">Reemplaza con foto real del restaurante</span>
       </div>
       <div class="hero-badge">Abierto desde 1998</div>
@@ -621,7 +635,7 @@
     <div class="platos-grid">
 
       <div class="plato-card">
-        <div class="plato-thumb bg-a">🥩</div>
+        <div class="plato-thumb bg-a"><i data-lucide="beef"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Costilla a la brasa</p>
           <p class="plato-desc">Cocción lenta 12 horas, glaseado de piloncillo y chile ancho, puré de camote ahumado.</p>
@@ -633,7 +647,7 @@
       </div>
 
       <div class="plato-card">
-        <div class="plato-thumb bg-b">🦐</div>
+        <div class="plato-thumb bg-b"><i data-lucide="shrimp"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Camarones al mojo</p>
           <p class="plato-desc">Camarones del Pacífico, mantequilla de ajo negro, limón amarillo y hierba santa.</p>
@@ -645,7 +659,7 @@
       </div>
 
       <div class="plato-card">
-        <div class="plato-thumb bg-c">🫕</div>
+        <div class="plato-thumb bg-c"><i data-lucide="soup"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Birria de res</p>
           <p class="plato-desc">Receta tradicional jalisciense, 8 horas de cocción, consomé aromático y tortillas de comal.</p>
@@ -657,7 +671,7 @@
       </div>
 
       <div class="plato-card">
-        <div class="plato-thumb bg-d">🥗</div>
+        <div class="plato-thumb bg-d"><i data-lucide="salad"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Ensalada de temporada</p>
           <p class="plato-desc">Verdes locales, betabel asado, queso de rancho, nuez caramelizada y aderezo de tamarindo.</p>
@@ -669,7 +683,7 @@
       </div>
 
       <div class="plato-card">
-        <div class="plato-thumb bg-e">🌮</div>
+        <div class="plato-thumb bg-e"><i data-lucide="chef-hat"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Taco de pato confitado</p>
           <p class="plato-desc">Pato confitado 48 hrs, salsa de ciruela, cebolla morada encurtida, tortilla de maíz azul.</p>
@@ -681,7 +695,7 @@
       </div>
 
       <div class="plato-card">
-        <div class="plato-thumb bg-f">🍮</div>
+        <div class="plato-thumb bg-f"><i data-lucide="cake-slice"></i></div>
         <div class="plato-info">
           <p class="plato-nombre">Flan de cajeta</p>
           <p class="plato-desc">Receta de la abuela, cajeta artesanal de Zamora, nuez garapiñada y flor de sal.</p>
@@ -699,7 +713,7 @@
   <section id="nosotros" style="background:#F7F0E4;">
     <div class="nosotros-grid">
       <div class="nosotros-visual">
-        🔥
+        <i data-lucide="flame"></i>
         <span class="overlay-text">Reemplaza con foto del chef</span>
       </div>
       <div class="nosotros-content">
@@ -731,21 +745,21 @@
     <div class="resenas-grid">
 
       <div class="resena-card">
-        <p class="resena-estrellas">★★★★★</p>
+        <p class="resena-estrellas" aria-label="5 de 5 estrellas"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></p>
         <p class="resena-texto">"La costilla es simplemente lo mejor que he comido en Guadalajara. El sabor del ahumado se queda con uno. Ya reservé para el próximo mes."</p>
         <p class="resena-autor">Mariana Robles</p>
         <p class="resena-fecha">Marzo 2026 · Google</p>
       </div>
 
       <div class="resena-card">
-        <p class="resena-estrellas">★★★★★</p>
+        <p class="resena-estrellas" aria-label="5 de 5 estrellas"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></p>
         <p class="resena-texto">"Llevé a mis papás a celebrar su aniversario y fue perfecto. La atención, la comida, el ambiente. Todo al nivel. Definitivamente regresamos."</p>
         <p class="resena-autor">Carlos Ibarra</p>
         <p class="resena-fecha">Enero 2026 · TripAdvisor</p>
       </div>
 
       <div class="resena-card">
-        <p class="resena-estrellas">★★★★★</p>
+        <p class="resena-estrellas" aria-label="5 de 5 estrellas"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></p>
         <p class="resena-texto">"Los tacos de pato confitado son un sueño. No esperaba encontrar algo así en una carta tan accesible. El flan de cajeta, imprescindible."</p>
         <p class="resena-autor">Valentina Cruz</p>
         <p class="resena-fecha">Febrero 2026 · Google</p>
@@ -827,7 +841,7 @@
     <div class="contacto-grid">
 
       <div class="contacto-bloque">
-        <h3>Dirección</h3>
+        <h3><i data-lucide="map-pin"></i>Dirección</h3>
         <address>
           Av. Vallarta 2800, Col. Arcos Vallarta<br>
           Guadalajara, Jalisco<br>
@@ -837,7 +851,7 @@
       </div>
 
       <div class="contacto-bloque">
-        <h3>Horarios</h3>
+        <h3><i data-lucide="clock"></i>Horarios</h3>
         <div class="horarios-row"><span class="dia">Martes – Viernes</span><span>1:00 – 11:00 PM</span></div>
         <div class="horarios-row"><span class="dia">Sábado</span><span>12:00 – 11:30 PM</span></div>
         <div class="horarios-row"><span class="dia">Domingo</span><span>12:00 – 6:00 PM</span></div>
@@ -845,7 +859,7 @@
       </div>
 
       <div class="contacto-bloque">
-        <h3>Contacto</h3>
+        <h3><i data-lucide="phone"></i>Contacto</h3>
         <p>
           <strong style="color:var(--warm-dark)">Teléfono</strong><br>
           (33) 3615-0000<br><br>
@@ -864,13 +878,17 @@
     <div class="footer-logo">La <span>Brasa</span></div>
     <p class="footer-copy">© 2026 La Brasa · Cocina de Autor · Guadalajara, Jal.</p>
     <div class="footer-social">
-      <a href="#" class="social-btn" aria-label="Instagram">IG</a>
-      <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+      <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#" class="social-btn" aria-label="TripAdvisor">TA</a>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@1.52.0/dist/umd/lucide.min.js"></script>
   <script>
+    // Iconos Lucide con el mismo grosor de línea en todo el sitio
+    lucide.createIcons({ attrs: { 'stroke-width': 1.75 } });
+
     function handleReserva(e) {
       e.preventDefault();
       const nombre = document.getElementById('nombre').value;
